@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MolanoMateo_ExamenProgreso1.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Ingrese el número para la recarga: "
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+            <Entry Placeholder="Ej. 099xxxxxxx" HorizontalOptions="Center"/>
+            <HorizontalStackLayout
+            Margin="20" Spacing="60">
+                <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center" HorizontalOptions="Start">
+                    <Label
+                Text="Seleccione el operador"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32" />
+                    <Picker x:Name="picker">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Tuenti</x:String>
+                                <x:String>CNT</x:String>
+                                <x:String>Claro</x:String>
+                                <x:String>Movistar</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </VerticalStackLayout>
+                <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center" HorizontalOptions="End">
+                    <Label
+                Text="Seleccione el valor de la recarga"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+                    <RadioButton Content="3" CheckedChanged="seleccionA"/>
+                    <RadioButton Content="5" CheckedChanged="seleccionB"/>
+                    <RadioButton Content="10" CheckedChanged="seleccionC"/>
+
+                </VerticalStackLayout>
+                
+            </HorizontalStackLayout>
+            <Label
+                x:Name="label"
+                Text=""
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32" HorizontalOptions="Center" />
+            <Button
+                x:Name="CounterBtn"
+                Text="Recargar"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+           
+        
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
